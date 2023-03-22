@@ -2,6 +2,7 @@ function validate() {
     let flag1 = 0;
     let flag2 = 0;
     let flag3 = 0;
+    let flag4=0;
     //get the value
     let pswd = document.getElementById("password").value;
     pswd = String(pswd);
@@ -18,13 +19,17 @@ function validate() {
             if (i >= 'A' && i <= 'Z') {
                 flag2 = 1;
             }
+            if(i>=0 &&i <=9)
+            {
+                flag4=1;
+            }
             //check special charcter
             if ((i == '@') || (i == '#') || (i == '$') || (i == '!')) {
                 flag3 = 1;
             }
         }
     }
-    if (flag1 && flag2 && flag3) {
+    if (flag1 && flag2 && flag3 &&flag4) {
         document.getElementById("msg").innerHTML = "correct";
     }
     else {
